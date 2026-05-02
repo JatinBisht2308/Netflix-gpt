@@ -11,12 +11,15 @@ const Borwse = () => {
   const nowPlayingMovies = useNowPlayingStore(
     (state) => state.nowPlayingMovies,
   );
+  const trailerId = useNowPlayingStore((state) => state.trailerId)
   if (!nowPlayingMovies.length > 0) return;
-  console.log("now playing  movies store data:", nowPlayingMovies);
+  console.log("now playing  movies store data:", nowPlayingMovies,trailerId);
+  const heroMovie = {...nowPlayingMovies[0], trailerId};
+
   return (
     <div>
       <Header />
-      <Hero />
+      <Hero movieDetails={heroMovie} />
     </div>
   );
 };

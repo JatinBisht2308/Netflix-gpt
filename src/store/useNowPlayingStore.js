@@ -5,6 +5,7 @@ const useNowPlayingStore = create((set) => ({
   nowPlayingMovies: [],
   loading: false,
   error: null,
+  trailerId: null,
 
   // actions
   setNowPlayingMovies: (movies) =>
@@ -30,6 +31,10 @@ const useNowPlayingStore = create((set) => ({
       loading: false,
       error: null,
     })),
+  setTrailerId: (id) =>
+    set({
+      trailerId: id,
+    }),
 }));
 
 export default useNowPlayingStore;
