@@ -1,6 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
 import profileIcon from "../assets/profile-icon.jpg";
-import { signOut } from "firebase/auth";
 import { signOutUser } from "../utils/firebaseSignIn";
 import useAuthStore from "../store/useAuthStore";
 
@@ -39,8 +38,7 @@ const Header = () => {
       </div>
 
       {/* RIGHT */}
-      <div className="right relative flex items-center"
-       ref={dropdownRef}>
+      <div className="right relative flex items-center" ref={dropdownRef}>
         {user && (
           <img
             src={profileIcon}

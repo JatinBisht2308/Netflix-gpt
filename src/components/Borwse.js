@@ -1,17 +1,24 @@
-import React from 'react'
-import useAuthStore from '../store/useAuthStore'
-import Header from './Header';
+import React from "react";
+import useAuthStore from "../store/useAuthStore";
+import Header from "./Header";
+import Hero from "./Hero";
+import { useBrowseMovies } from "../hooks/useBrowseMovies";
+import useNowPlayingStore from "../store/useNowPlayingStore";
 
 const Borwse = () => {
   const userDetails = useAuthStore((state) => state.user);
-  console.log(userDetails);
+  useBrowseMovies();
+  const nowPlayingMovies = useNowPlayingStore(
+    (state) => state.nowPlayingMovies,
+  );
+  if (!nowPlayingMovies.length > 0) return;
+  console.log("now playing  movies store data:", nowPlayingMovies);
   return (
     <div>
-      <Header/>
-      
-      {/* <h1>Browse screen{userDetails?.email} {userDetails?.uuid}</h1> */}
+      <Header />
+      <Hero />
     </div>
-  )
-}
+  );
+};
 
-export default Borwse
+export default Borwse;
