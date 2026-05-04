@@ -3,6 +3,9 @@ import { create } from "zustand";
 const useNowPlayingStore = create((set) => ({
   // state
   nowPlayingMovies: [],
+  upcomingMovies: [],
+  topRatedMovies: [],
+  popularMovies: [],
   loading: false,
   error: null,
   trailerId: null,
@@ -35,6 +38,21 @@ const useNowPlayingStore = create((set) => ({
     set({
       trailerId: id,
     }),
+  setTopRatedMovies: (movies) =>
+    set(() => ({
+      topRatedMovies: movies || [],
+      error: null,
+    })),
+  setPopularMovies: (movies) =>
+    set(() => ({
+      popularMovies: movies || [],
+      error: null,
+    })),
+  setUpcomingMovies: (movies) =>
+    set(() => ({
+      upcomingMovies: movies || [],
+      error: null,
+    })),
 }));
 
 export default useNowPlayingStore;

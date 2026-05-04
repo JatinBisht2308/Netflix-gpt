@@ -4,6 +4,9 @@ export const BASE_URL = "https://api.themoviedb.org/3";
 
 export const ENDPOINTS = {
   NOW_PLAYING: "/movie/now_playing",
+  TOP_RATED:"/movie/top_rated",
+  POPULAR:"/movie/popular",
+  UPCOMING:"/movie/upcoming"
 };
 
 export const IMAGE_BASE_URL = "https://image.tmdb.org/t/p/w500";

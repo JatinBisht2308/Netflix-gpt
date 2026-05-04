@@ -27,7 +27,7 @@ const Hero = ({ movieDetails }) => {
       <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
 
       {/* Content */}
-      <div className="relative z-10 flex flex-col justify-end h-full px-6 md:px-16 pb-20 max-w-2xl">
+      <div className="relative z-10 flex flex-col justify-end h-full px-6 md:px-16 pb-20 max-w-xl">
         <h1 className="text-3xl md:text-5xl font-bold mb-4">
           {movieDetails.title}
         </h1>

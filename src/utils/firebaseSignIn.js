@@ -12,7 +12,7 @@ export const signUpUser = async (displayName, email, password) => {
     await updateProfile(signUp.user, {
       displayName: displayName,
     });
-    console.log("whats in sign up:", signUp);
+  
     return signUp?.user;
   } catch (error) {
     throw error;
@@ -22,7 +22,7 @@ export const signUpUser = async (displayName, email, password) => {
 export const signInUser = async (email, password) => {
   try {
     const signIn = await signInWithEmailAndPassword(auth, email, password);
-    console.log("whats in sign in:", signIn);
+  
     return signIn?.user;
   } catch (error) {
     throw error;
@@ -33,7 +33,7 @@ export const signOutUser = async () => {
   try {
     const signOutUser = await signOut(auth);
     localStorage.clear();
-    console.log("sign out user:", signOutUser);
+   
   } catch (error) {
     throw error;
   }
